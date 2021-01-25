@@ -1,0 +1,4 @@
+.inverted-text {
+    color: red;
+    transform: rotate(-180deg);
+}

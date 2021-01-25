@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Generator</title>
+    <link rel="stylesheet" href="./syles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-7">
+        <div class="row justify-content-center">
+            <h1 class="mt-5">Trivia Game</h1>
+            <h4 class="mt-5">Test your knowledge! Select questions, categories and difficulties to prove you're a REAL GENIUS!!</h4>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5>Set your Trivia options! Good Luck!</h5>
+                        <hr>
+                        <form action="/questions" onsubmit="event.preventDefault(), getQuestions()">
+                            <div class="form-group">
+                                <label for="total-questions">Number of questions</label>
+                                <select class="form-control" id="total-questions">
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                    <option value="40">40</option>
+                                    <option value="50">50</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="select-category">Select category</label>
+                                <select class="form-control" id="select-category">
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="select-difficulty">Choose difficulty</label>
+                                <select class="form-control" id="select-difficulty">
+                                    <option value="any">Random</option>
+                                    <option value="easy">Easy</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="hard">Hard</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="select-type">Select type</label>
+                                <select class="form-control" id="select-type">
+                                    <option value="multiple">Multiple Choice</option>
+                                    <option value="boolean">True / False</option>
+                                    <option value="any">Random</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">Start!</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form action="/verify-answers" onsubmit="event.preventDefault(), verifyAnswers(answersRequested, questionsRequested)">
+            <div class="row" id="questions-container">
+                <!-- Aquí va el contenido -->
+            </div>
+        </form>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="inverted-text">Access console for </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="./authenticated.js"></script>
+    <script src="./login.js"></script>
+    <script src="./api.js"></script>
+
+</body>
+</html>
